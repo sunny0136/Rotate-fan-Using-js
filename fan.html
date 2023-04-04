@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fan Rotation</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+        }
+
+        .container img {
+            width: 100%;
+            /* display: block;
+            margin: auto; */
+        }
+
+        .button-section {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .button-section button {
+            background: #e2cdaaa8;
+            border: 1px solid #d5cece;
+            padding: 10px;
+            box-shadow: 0 4px 7px #d5cece;
+            font-size: 15px;
+            font-weight: 600;
+            position: relative;
+            top: 0px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 5px 0px #c4c4c4;
+            -moz-box-shadow: 0px 5px 0px #c4c4c4;
+            -ms-box-shadow: 0px 5px 0px #c4c4c4;
+            -o-box-shadow: 0px 5px 0px #c4c4c4;
+            box-shadow: 0px 5px 0px #c4c4c4;
+            text-shadow: 1px 1px 1px #fff;
+            -webkit-transition: All 250ms ease;
+            -moz-transition: All 250ms ease;
+            -o-transition: All 250ms ease;
+            -ms-transition: All 250ms ease;
+            transition: All 250ms ease;
+        }
+
+        .button-section button:active {
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            -ms-box-shadow: none !important;
+            -o-box-shadow: none !important;
+            box-shadow: none !important;
+            -webkit-transition: All 250ms ease;
+            -moz-transition: All 250ms ease;
+            -o-transition: All 250ms ease;
+            -ms-transition: All 250ms ease;
+            transition: All 250ms ease;
+        }
+
+        .normal {
+            animation: on 3s linear infinite;
+        }
+
+        .fast {
+            animation: on 2s linear infinite;
+
+        }
+
+        .super_fast {
+            animation: on 0.8s linear infinite;
+
+        }
+
+        @keyframes on {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./Daco_4640752.png" alt="" class="img">
+        <div class="button-section">
+            <button onclick="on()" ;>Normal</button>
+            <button onclick="fast()" ;>Fast</button>
+            <button onclick="super_fast()" ;>Super Fast</button>
+            <button onclick="off()" ;>Off</button>
+        </div>
+    </div>
+</body>
+<script>
+    let container = document.querySelector(".container");
+    let img = document.querySelector(".img")
+    function on() {
+        img.classList.add("normal");
+        img.classList.remove("fast", "super_fast")
+    }
+    function fast() {
+        img.classList.add("fast");
+        img.classList.remove("super_fast", "normal")
+
+    }
+    function super_fast() {
+        img.classList.add("super_fast");
+        img.classList.remove("normal", "fast")
+
+    }
+    function off() {
+        img.classList.remove("normal", "fast", "super_fast")
+        img.classList.add("on")
+
+    }
+</script>
+
+</html>
